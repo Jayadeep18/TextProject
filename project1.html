@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href="/dist/output.css" rel="stylesheet"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked+.slider {
+            background-color: #2196F3;
+        }
+
+        input:focus+.slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked+.slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="flex bg-slate-200 text-black justify-end h-12 items-center">
+        <label class="switch">
+            <input type="checkbox" id="checkbox">
+            <span class="slider round"></span>
+        </label>
+        <div class="mx-10 text-xl hover:text-red-500 drop-shadow-xl"><a href="project1.html" target="_self">Home</a>
+        </div>
+        <div class="mx-10 text-xl hover:text-red-500 drop-shadow-xl"><a href="about.html" target="_self">About</a></div>
+    </nav>
+    <!-- bg-slate-100 -->
+    <div id="mainbox" class="w-3/4 h-10 m-auto pt-32 pb-10 flex-wrap">
+        <label for="text" class="text-3xl flex-none font-semibold">Enter Text Here:</label>
+        <input type="text" id="text" name="text" value="" class="grow w-4/6 border-2 hover:border-4 drop-shadow-xl">
+        <button id="Reset" value="Reset"
+            class="flex-none text-sm bg-purple-600 rounded-md p-1 text-white drop-shadow-xl">Reset</button>
+    </div>
+    <div id="subbox" class="w-3/4 m-auto flex justify-start py-10 text-xl flex-wrap text-white">
+        <button id="Copy" value="Copy" class="bg-blue-600 rounded-md p-1 mr-5 my-2 drop-shadow-xl">Copy</button>
+        <button id="Capitalize" value="Capitalize"
+            class="bg-blue-600 rounded-md p-1 mr-5 my-2 drop-shadow-xl ">Capitalize</button>
+        <button id="Uppercase" value="Uppercase"
+            class="bg-blue-600 rounded-md p-1 mr-5 my-2 drop-shadow-xl ">Uppercase</button>
+        <button id="Lowercase" value="Lowercase"
+            class="bg-blue-600 rounded-md p-1 mr-5 my-2 drop-shadow-xl ">Lowercase</button>
+        <button id="Extraspace" value="Extraspace"
+            class="bg-blue-600 rounded-md p-1 mr-5 my-2 drop-shadow-xl ">Extraspace</button>
+        <button id="Clear" value="Clear" class="bg-blue-600 rounded-md p-1 mr-5 drop-shadow-xl my-2">Clear</button>
+    </div>
+
+    <!-- bg-red-100 -->
+    <div id="container" value="" class="w-3/4 m-auto flex-wrap">
+        <h1 class="text-3xl my-1 font-medium">Your Summary</h1>
+        <button id="Fetch" value="Fetch"
+            class="bg-purple-600 rounded-md p-1 my-1 text-white drop-shadow-xl">Fetch</button><br>
+        <span id="Count" value="" class="font-serif italic text-lg"></span>
+        <div id="finaltext"></div>
+    </div>
+
+    <div class="clcbox">
+        <a id="clk" href="project1dark.html">h</a>
+    </div>
+    <script src="logic.js"></script>
+</body>
+
+</html>
